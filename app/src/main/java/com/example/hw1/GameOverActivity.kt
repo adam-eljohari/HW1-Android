@@ -2,6 +2,8 @@ package com.example.hw1
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+
+import com.example.hw1.utilities.Constants
 import com.google.android.material.textview.MaterialTextView
 
 class GameOverActivity : AppCompatActivity(){
@@ -10,7 +12,8 @@ class GameOverActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_gameover)
+        setContentView(R.layout.activity_game_over)
+
 
         findViews()
         initViews()
@@ -23,7 +26,7 @@ class GameOverActivity : AppCompatActivity(){
     private fun initViews() {
         val bundle: Bundle? = intent.extras
 
-        val message = bundle?.getString("MESSAGE_KEY","🤷🏻‍♂️ Unknown Status")
+        val message = bundle?.getString(Constants.BundleKeys.STATUS_KEY,"🤷🏻‍♂️ Unknown Status")
 
         gameOver_LBL_status.text = buildString {
             append(message)
